@@ -1,0 +1,39 @@
+<annotation>
+	<folder>document</folder>
+	<filename>健康保険証（例2）.png</filename>
+	<path>./static/document/</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>681</width>
+		<height>432</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>name</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>415</xmin>
+			<ymin>124</ymin>
+			<xmax>633</xmax>
+			<ymax>144</ymax>
+		</bndbox>
+	</object>
+    <object>
+		<name>brithday</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>413</xmin>
+			<ymin>148</ymin>
+			<xmax>634</xmax>
+			<ymax>172</ymax>
+		</bndbox>
+	</object>
+<!-- 中略 -->
+</annotation>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>顔認証システム</title>
+</head>
+
+<body>
+    <h2>顔認証システム</h2>
+    <form method="POST" enctype="multipart/form-data" action="/check">
+        <input type="file" name="image1" placeholder="Upload an image">
+        <input type="file" name="image2" placeholder="Upload an image">
+
+        <select name="type">
+            <option value="1">運転免許証</option>
+            <option value="2">パスポート</option> 
+            <option value="3">保険証</option> 
+            <option value="4">マイナンバー</option> 
+            <option value="5">在留カード</option> 
+        </select>
+        <button>認証</button>
+    </form>
+
+    <div style="padding-top: 17px; display: flex">
+        {% if path1 %}
+        <div>
+            <img src="{{ url_for('display_image', filename=path1) }}" style="width: 300px;height: 400px;">
+        </div>
+        {% endif %} {% if path2 %}
+
+        <div style="padding-left: 30px;">
+            <img src="{{ url_for('display_image', filename=path2) }}" style="width: 300px;height: 400px;">
+        </div>
+
+        {% endif %}
+    </div>
+
+
+    <div style="background: #f6f6f6; padding: 20px; margin-top: 20px;">
+        <strong>結果</strong> {% if message %}
+        <p>{{ message }}</p>
+        {% endif %} {% if result %}
+        <p>{{ result }}</p>
+        {% endif %} {% if accuracy %}
+        <p>{{ accuracy }}</p>
+        {% endif %} {% if messages %}
+        <p>{{ messages }}</p>
+        {% endif %}
+    </div>
+
+    <form method="post" action="/clear">
+        {% if path1 %}
+        <input type="text" name="path1" value="{{path1}}" style="display: none;"> {% else %}
+        <input type="text" name="path1" style="display: none;"> {% endif %} {% if path2 %}
+        <input type="text" name="path2" value="{{path2}}" style="display: none;"> {% else %}
+        <input type="text" name="path2" style="display: none;"> {% endif %}
+        <button>クリア</button>
+    </form>
+</body>
+
+</html>

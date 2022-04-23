@@ -1,0 +1,51 @@
+<annotation>
+	<folder>document</folder>
+	<filename>運転免許証（例）.png</filename>
+	<path>./static/document/</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>450</width>
+		<height>278</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>name</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>52</xmin>
+			<ymin>13</ymin>
+			<xmax>276</xmax>
+			<ymax>34</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>birthday</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>283</xmin>
+			<ymin>13</ymin>
+			<xmax>437</xmax>
+			<ymax>35</ymax>
+		</bndbox>
+	</object>
+	<!-- <object>
+		<name>address</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>50</xmin>
+			<ymin>55</ymin>
+			<xmax>432</xmax>
+			<ymax>76</ymax>
+		</bndbox>
+	</object> -->
+<!-- 中略 -->
+</annotation>
