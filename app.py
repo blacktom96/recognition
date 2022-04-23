@@ -43,19 +43,19 @@ def check():
     accuracy ='{percent:.2%}'.format(percent=face_distance_to_conf(result_from_detect[1]))
     # "1":運転免許証
     # "2":パスポート
-    # "3":保険証 
-    # "4":マイナンバー
-    # "5":在留カード 
+    # "3":マイナンバー
+    # "4":在留カード 
+    # "5":保険証 
     if(type == "1"): 
         messages =  getDriversLicense(path1)
     elif(type == "2"): 
         messages =  getPassport(path1)
-    elif(type == "3"): 
-        messages =  getInsuranceCatd(path1)
+    elif(type == "3"):
+        messages =  getMyNumber(path1) 
     elif(type == "4"): 
-        messages =  getMyNumber(path1)
-    elif(type == "5"): 
         messages =  getResidenceCard(path1) 
+    elif(type == "5"): 
+        messages =  getInsuranceCatd(path1)
     if result_from_detect[2]:
         os.remove(path1)
         os.remove(path2)
