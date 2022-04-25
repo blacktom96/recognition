@@ -1,6 +1,3 @@
-import matplotlib
-matplotlib.use('Agg')
-
 import os
 from sys import path
 from flask import Flask, render_template, request,redirect, url_for
@@ -13,7 +10,7 @@ from insuranceCard1 import getInsuranceCatd
 
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = 'static/uploads/'
+app.config['UPLOAD_FOLDER'] = '/var/www/html/recognition/static/uploads/'
 
 @app.route('/')
 def index():

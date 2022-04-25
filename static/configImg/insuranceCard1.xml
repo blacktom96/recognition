@@ -1,7 +1,7 @@
 <annotation>
 	<folder>document</folder>
 	<filename>健康保険証（例1）.png</filename>
-	<path>./static/document/</path>
+	<path>/var/www/html/recognition/static/document/</path>
 	<source>
 		<database>Unknown</database>
 	</source>

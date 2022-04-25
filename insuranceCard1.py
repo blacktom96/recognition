@@ -1,5 +1,5 @@
 import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./text-recognition.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/var/www/html/recognition/text-recognition.json"
 
 import cv2
 import io
