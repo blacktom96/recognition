@@ -18,7 +18,7 @@ def getPassport(image):
 
 
 
-  tree = ET.parse("./static/configImg/passport.xml") # input_xmlはxmlのパス
+  tree = ET.parse("/var/www/html/recognition/static/configImg/passport.xml") # input_xmlはxmlのパス
   root = tree.getroot()
 
   text_infos = []

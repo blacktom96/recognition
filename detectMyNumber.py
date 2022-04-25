@@ -23,7 +23,7 @@ def getMyNumber(image):
 
 
 
-  tree = ET.parse("./static/configImg/myNumber.xml") # input_xmlはxmlのパス
+  tree = ET.parse("/var/www/html/recognition/static/configImg/myNumber.xml") # input_xmlはxmlのパス
   root = tree.getroot()
 
   text_infos = []

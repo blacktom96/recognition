@@ -17,7 +17,7 @@ def getDriversLicense(image):
   response = client.document_text_detection(image=image)
 
 
-  tree = ET.parse("./static/configImg/driversLicense.xml") # input_xmlはxmlのパス
+  tree = ET.parse("/var/www/html/recognition/static/configImg/driversLicense.xml") # input_xmlはxmlのパス
   root = tree.getroot()
 
   text_infos = []

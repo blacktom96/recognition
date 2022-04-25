@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 
 from google.cloud import vision
 def getResidenceCard(image):
-  KCinput_file = "./document/在留カード（例）.png"
+  #KCinput_file = "./document/在留カード（例）.png"
 
   # img = cv2.imread(input_file) # input_fileは画像のパス
 
@@ -22,7 +22,7 @@ def getResidenceCard(image):
 
 
 
-  tree = ET.parse("./configImg/residenceCard.xml") # input_xmlはxmlのパス
+  tree = ET.parse("/var/www/html/recognition/configImg/residenceCard.xml") # input_xmlはxmlのパス
   root = tree.getroot()
 
   text_infos = []

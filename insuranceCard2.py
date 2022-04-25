@@ -19,7 +19,7 @@ image = vision.Image(content=content)
 response = client.document_text_detection(image=image)
 
 
-tree = ET.parse("./configImg/insuranceCard2.xml") # input_xmlはxmlのパス
+tree = ET.parse("/var/www/html/recognition/configImg/insuranceCard2.xml") # input_xmlはxmlのパス
 root = tree.getroot()
 
 text_infos = []
