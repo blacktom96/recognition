@@ -6,8 +6,8 @@ import cv2
 
 detector = dlib.get_frontal_face_detector()
 
-sp = dlib.shape_predictor("shape_predictor_5_face_landmarks.dat")
-facerec = dlib.face_recognition_model_v1("dlib_face_recognition_resnet_model_v1.dat")
+sp = dlib.shape_predictor("/usr/local/lib/python3.8/dist-packages/dlib/shape_predictor_5_face_landmarks.dat")
+facerec = dlib.face_recognition_model_v1("/usr/local/lib/python3.8/dist-packages/dlib/dlib_face_recognition_resnet_model_v1.dat")
 
 def detectImage(image1: str, image2: str):
     #指定された画像取り込む
