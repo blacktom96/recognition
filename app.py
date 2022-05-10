@@ -88,16 +88,6 @@ def recogntion():
     image2 = request.files["image2"]
     messages = ""
 
-    if 'type' not in request.form:
-        resp = jsonify({'result':'公的証明書書類が必要です。'})
-        resp.status_code = 400
-        return resp
-    
-    type = str(request.form["type"])
-    if type not in ALLOWED_TYPE:
-        resp = jsonify({'result':'公的証明書書類が選択されていません。'})
-        resp.status_code = 400
-        return resp
 
     if image1.filename == '':
         resp = jsonify({'result':'公的証明書が選択されていません。'})
@@ -108,6 +98,16 @@ def recogntion():
         resp.status_code = 400
         return resp
 
+    
+    if 'type' not in request.form:
+        resp = jsonify({'result':'公的証明書書類が必要です。'})
+        resp.status_code = 400
+        return resp
+    type = str(request.form["type"])
+    if type not in ALLOWED_TYPE:
+        resp = jsonify({'result':'公的証明書書類が選択されていません。'})
+        resp.status_code = 400
+        return resp
     if (image1 and allowed_file(image1.filename)) and (image2 and allowed_file(image2.filename)):
         path1 = os.path.join(app.config['UPLOAD_FOLDER'], image1.filename)
         path2 = os.path.join(app.config['UPLOAD_FOLDER'], image2.filename)
