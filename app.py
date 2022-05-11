@@ -1,6 +1,7 @@
 import os
 from sys import path
 from flask import Flask, render_template, request,redirect, url_for,jsonify
+from flask_cors import CORS
 from getData import detectImage, face_distance_to_conf
 from detectDriversLicense import getDriversLicense
 from residenceCard import getResidenceCard
@@ -10,6 +11,7 @@ from insuranceCard1 import getInsuranceCatd
 
 
 app = Flask(__name__)
+CORS(app)
 app.config['UPLOAD_FOLDER'] = '/var/www/html/recognition/static/uploads/'
 
 @app.route('/')
