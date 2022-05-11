@@ -79,10 +79,12 @@ def recogntion():
     if 'image1' not in request.files:
         resp = jsonify({'result':'公的証明書が必要です。'})
         resp.status_code = 400
+        resp.headers.add('Access-Control-Allow-Origin', '*')
         return resp
     elif 'image2' not in request.files:
         resp = jsonify({'result':'顔写真が必要です。'})
         resp.status_code = 400
+        resp.headers.add('Access-Control-Allow-Origin', '*')
         return resp
 
 
@@ -94,21 +96,25 @@ def recogntion():
     if image1.filename == '':
         resp = jsonify({'result':'公的証明書が選択されていません。'})
         resp.status_code = 400
+        resp.headers.add('Access-Control-Allow-Origin', '*')
         return resp
     elif image2.filename == '':
         resp = jsonify({'result':'顔写真が選択されていません。'})
         resp.status_code = 400
+        resp.headers.add('Access-Control-Allow-Origin', '*')
         return resp
 
     
     if 'type' not in request.form:
         resp = jsonify({'result':'公的証明書書類が必要です。'})
         resp.status_code = 400
+        resp.headers.add('Access-Control-Allow-Origin', '*')
         return resp
     type = str(request.form["type"])
     if type not in ALLOWED_TYPE:
         resp = jsonify({'result':'公的証明書書類が選択されていません。'})
         resp.status_code = 400
+        resp.headers.add('Access-Control-Allow-Origin', '*')
         return resp
     if (image1 and allowed_file(image1.filename)) and (image2 and allowed_file(image2.filename)):
         path1 = os.path.join(app.config['UPLOAD_FOLDER'], image1.filename)
@@ -143,21 +149,25 @@ def recogntion():
 
             resp = jsonify({'result':'写真がぼやけてしまいまして、もう一度やり直してください'})
             resp.status_code = 201
+            resp.headers.add('Access-Control-Allow-Origin', '*')
             return resp
 
         else:
             if result_from_detect[0]:
                 resp = jsonify({'result':'一致ます','messages':messages})
                 resp.status_code = 201
+                resp.headers.add('Access-Control-Allow-Origin', '*')
                 return resp
             else:
                 resp = jsonify({'result':'一致しません','messages':messages})
                 resp.status_code = 201
+                resp.headers.add('Access-Control-Allow-Origin', '*')
                 return resp
 
     else:
         resp = jsonify({'result' : '許可されるファイルタイプは png、jpg、jpegです。'})
         resp.status_code=400
+        resp.headers.add('Access-Control-Allow-Origin', '*')
         return resp
 	    
 
