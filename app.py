@@ -11,7 +11,7 @@ from insuranceCard1 import getInsuranceCatd
 
 
 app = Flask(__name__)
-CORS(app)
+#CORS(app)
 app.config['UPLOAD_FOLDER'] = '/var/www/html/recognition/static/uploads/'
 
 @app.route('/')
