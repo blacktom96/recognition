@@ -40,6 +40,46 @@ def check():
     path2 = os.path.join(app.config['UPLOAD_FOLDER'], image2.filename)
     image1.save(path1)
     image2.save(path2)
+    
+    client = vision.ImageAnnotatorClient()
+
+    with io.open(path1, 'rb') as image_file:
+        content = image_file.read()
+
+    image = vision.Image(content=content)
+
+    response = client.text_detection(image=image)
+    print("text", response)
+    #texts = response.text_annotations[0].description
+    
+    if not response:
+        os.remove(path1)
+        os.remove(path2)
+
+        resp = jsonify({'result':'カードをアップロードしてください。'})
+        resp.status_code = 201
+        return resp
+
+    with io.open(path2, 'rb') as image_file:
+        content2 = image_file.read()
+
+    image2 = vision.Image(content=content2)
+
+    response2 = client.text_detection(image=image2)
+    
+    #texts2 = response.text_annotations[0].description
+
+    if(response2 != ""):
+        os.remove(path1)
+        os.remove(path2)
+
+        resp = jsonify({'result':'文字をついていない写真をアップロードしてください。'})
+        resp.status_code = 201
+        return resp
+
+
+
+
     # 顔検出ー＞二つの画像の顔を比較して同じかどうか実行
     result_from_detect = detectImage(path1,path2)
     linear_val = (1.0 - result_from_detect[1]) / (0.8)
