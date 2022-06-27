@@ -49,7 +49,7 @@ def check():
     image = vision.Image(content=content)
 
     response = client.text_detection(image=image)
-    print("text", response)
+    #print("text", response)
     #texts = response.text_annotations[0].description
     
     if not response:
@@ -185,7 +185,7 @@ def recogntion():
         image = vision.Image(content=content)
 
         response = client.text_detection(image=image)
-        print("text", response)
+        #print("text", response)
         #texts = response.text_annotations[0].description
         
         if not response:
