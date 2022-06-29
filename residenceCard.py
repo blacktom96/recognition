@@ -22,7 +22,7 @@ def getResidenceCard(image):
 
 
 
-  tree = ET.parse("/var/www/html/recognition/configImg/residenceCard.xml") # input_xmlはxmlのパス
+  tree = ET.parse("/var/www/html/recognition/static/configImg/residenceCard.xml") # input_xmlはxmlのパス
   root = tree.getroot()
 
   text_infos = []
