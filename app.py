@@ -205,7 +205,7 @@ def recogntion():
         
         #texts2 = response.text_annotations[0].description
 
-        if(response2 != ""):
+        if bool(response2) != 0:
             os.remove(path1)
             os.remove(path2)
 
